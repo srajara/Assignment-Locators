@@ -1,5 +1,7 @@
 package org.test;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,14 +14,18 @@ public class BobCatcom {
 		driver.get("https://www.bobcat.com/in/en/index");
 		driver.findElement(By.xpath("(//a[@class='close'])[2]")).click();
 	driver.findElement(By.xpath("(//a[@class='text-uppercase text-center has-sub dtm-pro-grp-txt-name'])[3]")).click();
-	driver.findElement(By.xpath("(//div//a[@class='close'])[3]")).click();
-	WebElement wb = driver.findElement(By.xpath("//body//div//div//div//div//div//div//div//div//div//h1"));
-	System.out.println(wb.getText());
-//	List<WebElement> we = driver.findElements(By.xpath("//div//h2"));
-//		for (int i = 0; i < we.size(); i++) {
-//			System.out.println(we.get(i).getText());
-//			
-//		}
+	//driver.findElement(By.xpath("(//div//a[@class='close'])[3]")).click();
+	//WebElement wb = driver.findElement(By.xpath("//body//div//div//div//div//div//div//div//div//div//h1"));
+	//System.out.println(wb.getText());
+	//System.out.println(wb.getText());
+	
+List<WebElement> we = driver.findElements(By.xpath("//body//div//div//div//div//div//div//div//div//div//h2"));
+		for (int i = 0; i < we.size(); i++) {
+			System.out.println(we.get(i).getText());
+			
+		}
+		
+		driver.quit();
 	}
 
 }

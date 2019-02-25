@@ -17,21 +17,23 @@ public class LocaYahoo {
 		driver.get("https://in.yahoo.com/?p=us");
 		
 		driver.findElement(By.id("uh-search-box")).sendKeys("selenium",Keys.ENTER);
-		gotopage("3");
+		gotopage("5");
 	}
 	
 public static void gotopage(String pageNum) {
 		
 		List<WebElement> yaPages = driver.findElements(By.xpath("//div[@class='compPagination']//a"));
 		for (int i = 0; i < yaPages.size(); i++) {
+			System.out.println(i);
 			if(yaPages.get(i).getText().equals(pageNum))
 			{
 				driver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
-				yaPages.get(i).findElement(By.tagName("a")).click();
+				yaPages.get(i).click();
 				break;
 			}
 			
 		}
-		driver.quit();
+	//	driver.quit();
+		}
 
-}}
+}
