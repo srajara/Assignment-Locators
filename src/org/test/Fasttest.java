@@ -13,9 +13,10 @@ public class Fasttest {
 		driver = new ChromeDriver();
 		driver.get("https://fast.com/");
 //	WebDriverWait wait = new WebDriverWait(driver, 100);
-	Thread.sleep(3000);
-		WebElement sPeed = driver.findElement(By.xpath("//div[@class='speed-results-container succeeded'and @id='speed-value']"));
-		System.out.println(sPeed.getText());
+	Thread.sleep(5000);
+	System.out.println(driver.findElement(By.xpath("//div//div[@class='speed-container centered']/div/div[2]//div/div\"")).getText());
+		//WebElement sPeed = driver.findElement(By.xpath("//div[@class='speed-results-container succeeded'and @id='speed-value']"));
+		//System.out.println(sPeed.getText());
 	}
 
 }
